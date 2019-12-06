@@ -20,6 +20,27 @@ Route::get('/test', function () {
     return "test!";
 });
 
+Route::get('/myposts', function () {
+    return view('posts.myposts');
+})->name('posts.myposts');
+
+Route::get('/view', function () {
+    return view('posts.view');
+})->name('posts.view');
+
+Route::get('/edit', function () {
+    return view('posts.edit');
+})->name('posts.edit');
+
+Route::get('/create', function () {
+    return view('posts.create');
+})->name('posts.create');
+
+/*
+Route::get('/view', function () {
+    
+})->name('posts.view');
+*/
 
 Auth::routes();
 
