@@ -22,7 +22,7 @@
 						<th>Post Id</th>
 						<th>Title</th>
 						<th>Date Created</th>
-						<th>        </th>
+						<th></th>
 					</thead>
 					<tbody>
 				        <tr>

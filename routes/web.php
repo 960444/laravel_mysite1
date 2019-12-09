@@ -16,8 +16,9 @@ Route::get('/', function () {
 });
 
 
-
+//Posts Routes
 Route::get('posts', 'PostController@index')->name('posts.index');
+Route::get('posts/{id}', 'PostController@show')->name('posts.show');
 
 
 
@@ -27,7 +28,7 @@ Route::get('/myposts', function () {
 })->name('posts.myposts');
 
 Route::get('/view', function () {
-    return view('posts.view');
+    return view('posts.show');
 })->name('posts.view');
 
 Route::get('/edit', function () {
