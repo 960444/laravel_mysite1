@@ -25,7 +25,16 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
+    }
+
+    public function user_show()
+    {
+        $user_id = auth()->user()->id;
+
+        $posts = Post::get()->where('user_id', $user_id);
+
+        return view('posts.user', ['posts' => $posts]);
     }
 
     /**
@@ -36,7 +45,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = auth()->user()->id;
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:100',
+            'content' => 'required',
+        ]);
+
+        $post = new Post;
+
+        $post->user_id = $user_id;
+
+        $post->title = $validatedData['title'];
+
+        $post->content = $validatedData['content'];
+
+        $post->save();
+
+        return redirect()->route('posts.show', $post->id)->with('alert', 'Post Created!');
     }
 
     /**

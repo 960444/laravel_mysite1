@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('posts.myposts') }}">MyPosts</a>
+                        <a class="nav-link" href="{{ route('posts.user') }}">MyPosts</a>
                     </li>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->

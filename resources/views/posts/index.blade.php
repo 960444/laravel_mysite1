@@ -31,7 +31,7 @@
     </div>
     @endforeach
 
-    <div class="text-center" style="margin-left: 400px;margin-top: 20px;">
+    <div class="text-center" style="margin-left: 500px;margin-top: 20px;">
 	    {!! $posts->links(); !!}
     </div>
 
