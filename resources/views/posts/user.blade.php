@@ -30,7 +30,7 @@
 					        <td>{{ $post->id }}</td>
 					        <td>{{ $post->title }}</td>
 					        <td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
-                            <td><a href="{{ route('posts.edit') }}" class="btn btn-primary btn-sm" role="button">Edit</a>
+                            <td><a href="{{ $post->id }}/edit" class="btn btn-primary btn-sm" role="button">Edit</a>
                             <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="btn btn-primary btn-sm" role="button">View</a></td>
 				        </tr>
                         @endforeach

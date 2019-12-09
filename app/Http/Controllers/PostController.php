@@ -62,7 +62,8 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.show', $post->id)->with('alert', 'Post Created!');
+        session()->flash('message', 'Post was created.');
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -85,7 +86,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -97,7 +99,21 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:100',
+            'content' => 'required',
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $validatedData['title'];
+
+        $post->content = $validatedData['content'];
+
+        $post->save();
+
+        session()->flash('message', 'Post edited!');
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

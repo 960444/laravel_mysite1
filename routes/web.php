@@ -21,6 +21,8 @@ Route::get('posts', 'PostController@index')->name('posts.index');
 Route::post('posts', 'PostController@store')->name('posts.store');
 Route::get('posts/create', 'PostController@create')->name('posts.create');
 Route::get('posts/user', 'PostController@user_show')->name('posts.user');
+Route::get('posts/{id}/edit', 'PostController@edit')->name('posts.edit');
+Route::put('posts/{id}', 'PostController@update')->name('posts.update');
 Route::get('posts/{id}', 'PostController@show')->name('posts.show');
 
 
@@ -32,9 +34,8 @@ Route::get('/view', function () {
     return view('posts.show');
 })->name('posts.view');
 
-Route::get('/edit', function () {
-    return view('posts.edit');
-})->name('posts.edit');
+
+
 
 /*
 Route::get('/view', function () {
