@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', function () {
-    return "test!";
-});
+
+Route::get('posts', 'PostController@index')->name('posts.index');
+
+
+
 
 Route::get('/myposts', function () {
     return view('posts.myposts');
@@ -44,4 +46,4 @@ Route::get('/view', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostController@index')->name('home');

@@ -24,7 +24,9 @@
 			</div>
 		</div>
 		
-		<div class="col-md-12 col-md-offset-2">
+
+
+
 			<h4>Comments:</h4>
 		</div>
 		<div class="card border-primary mb-3" style="max-width: 70rem;">
