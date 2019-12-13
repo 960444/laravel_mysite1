@@ -28,6 +28,7 @@
 						<input type="input" type="text" class="form-control" name="title"
                             value="{{ old('title') }}">
 					</div>
+				
 					<div class="form-group">
 						<label for="content">Post Content:</label>
 						<textarea class="form-control" name="content" rows="5"

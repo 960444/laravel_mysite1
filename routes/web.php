@@ -39,7 +39,8 @@ Route::post('comments/{post_id}', 'CommentController@store')->name('comments.sto
 Route::get('comments/{id}/edit', 'CommentController@edit')->name('comments.edit')
     ->middleware('auth');
 
-
+//Profile Routes
+Route::get('profile/{id}', 'ProfileController@show')->name('profile.show');
 
 
 

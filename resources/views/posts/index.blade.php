@@ -27,9 +27,11 @@
             <h5 class="card-title">{{ $post->title }}</h5>
             <p class="card-text"> {{ $post->content }}</p>
             <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="btn btn-secondary" role="button">View Post</a>
-        </div>                
+        </div>
     </div>
     @endforeach
+
+    
 
     <div class="text-center" style="margin-left: 500px;margin-top: 20px;">
 	    {!! $posts->links(); !!}

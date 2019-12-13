@@ -9,7 +9,7 @@
 
     <title>@yield('title')</title>
 
-    <!-- Scripts 
+    <!-- Scripts
     <script src="{{ asset('js/app.js') }}" defer></script>
     -->
 
@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles 
+    <!-- Styles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     -->
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -33,9 +34,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('posts.user') }}">MyPosts</a>
                     </li>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
@@ -53,6 +51,16 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('posts.user') }}">MyPosts</a>
+                            </li>
+
+                            @if(auth()->user()->userProfile !== null)
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="profile/{{ auth()->user()->userProfile->id }}">MyProfile</a>
+                                </li>
+                            @endif
+
                             <li class="nav-item dropdown active">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -76,7 +84,7 @@
             </ul>
         </div>
     </nav>
-       
+
         <main class="py-4">
             @yield('content')
         </main>

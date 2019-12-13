@@ -37,6 +37,10 @@
 			</div>
 		</div>
 
+
+
+
+
 	    <h4>Comments:</h4>
 
 			@foreach ($comments as $comment)
