@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+/*
+Route::post('comments', 'CommentController@apiStore')
+    ->name('api.comments.store');
+
+
+
+Route::get('comments/{post_id}', 'CommentController@apiIndex')
+    ->name('api.comments.index');
+*/

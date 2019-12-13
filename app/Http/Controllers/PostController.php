@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comment;
 
 class PostController extends Controller
 {
@@ -15,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate(3);
-        return view('posts.index', ['posts' => $posts]); 
+        return view('posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -32,7 +33,7 @@ class PostController extends Controller
     {
         $user_id = auth()->user()->id;
 
-        $posts = Post::get()->where('user_id', $user_id);
+        $posts = Post::where('user_id', $user_id)->paginate(6);
 
         return view('posts.user', ['posts' => $posts]);
     }
@@ -74,8 +75,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        //$user_id = auth()->user()->id;
         $post = Post::findOrFail($id);
-        return view('posts.show', ['post' => $post]);
+        $comments = Comment::where('post_id', $id)->paginate(5);
+        return view('posts.show', ['post' => $post])->withComments($comments);
     }
 
     /**

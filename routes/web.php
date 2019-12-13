@@ -24,6 +24,12 @@ Route::get('posts/user', 'PostController@user_show')->name('posts.user');
 Route::get('posts/{id}/edit', 'PostController@edit')->name('posts.edit');
 Route::put('posts/{id}', 'PostController@update')->name('posts.update');
 Route::get('posts/{id}', 'PostController@show')->name('posts.show');
+//Comment Routes
+Route::put('comments/{id}', 'CommentController@update')->name('comments.update');
+Route::post('comments/{post_id}', 'CommentController@store')->name('comments.store');
+Route::get('comments/{id}/edit', 'CommentController@edit')->name('comments.edit');
+
+
 
 
 Route::get('/myposts', function () {
@@ -39,7 +45,7 @@ Route::get('/view', function () {
 
 /*
 Route::get('/view', function () {
-    
+
 })->name('posts.view');
 */
 

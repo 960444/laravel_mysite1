@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\database",
-    "\\database\\factories",
-    "\\database\\migrations",
-    "\\database\\seeds",
     "\\resources",
+    "\\resources\\sass",
     "\\resources\\views",
     "\\resources\\views\\layouts",
-    "\\resources\\views\\posts",
-    "\\routes"
+    "\\resources\\views\\posts"
   ],
-  "SelectedNode": "\\resources\\views\\posts\\myposts.blade.php",
+  "SelectedNode": "\\.editorconfig",
   "PreviewInSolutionExplorer": false
 }

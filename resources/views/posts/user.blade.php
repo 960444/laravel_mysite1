@@ -5,13 +5,13 @@
 @section('content')
 <div class="container">
 		<div class="row">
-			<div class="col-md-12 col-md-offset-2">	
+			<div class="col-md-12 col-md-offset-2">
 				<hr>
 				<div class="card">
 					<div class="card-body">
 						<h2 class="card-title">My Posts</h2>
 					</div>
-				</div>			
+				</div>
 				<hr>
 			</div>
 		</div>
@@ -37,5 +37,8 @@
 			        </tbody>
                 </table>
             </div>
+						<div class="text-center" style="margin-left: 500px;margin-top: 20px;">
+					    {!! $posts->links(); !!}
+				    </div>
 	  </div>
 @endsection
