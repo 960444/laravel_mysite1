@@ -8,9 +8,16 @@
 <div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-2">
-                @if (session('message'))
+
+				@if($user_id = auth()->user()->id !== $post->user->id)
+						<div>This post does not belong to you!</div>
+				@else
+							  @if (session('message'))
                     <p class="text-success"><b>{{ session('message') }}</b></p>
                 @endif
+
+
+
 				<h1>Edit Post</h1>
 				@if ($errors->any())
 					<div>
@@ -39,4 +46,5 @@
 			</div>
 		</div>
 </div>
+@endif
 @endsection

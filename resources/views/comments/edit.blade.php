@@ -5,6 +5,10 @@
 
 
 @section('content')
+@if($user_id = auth()->user()->id !== $comment->user->id)
+    <div>This comment does not belong to you!</div>
+@else
+
 <div class="container">
   <div class="card border-primary mb-3" style="max-width: 70rem;">
     <div class="card-header">Edit Comment</div>
@@ -19,4 +23,5 @@
       </form>
     </div>
 </div>
+@endif
 @endsection
